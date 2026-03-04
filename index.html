@@ -1,120 +1,347 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Pequeños Soñadores | Cuidado Nocturno Infantil</title>
+<title>Pequeños Soñadores</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-body{
-font-family:'Baloo 2',cursive;
-background:#1c2a49;
-color:white;
+:root{
+
+--primary:#ffd166;
+--secondary:#ffb347;
+
+--dark:#0f1a36;
+--dark2:#1c2a49;
+--dark3:#22355d;
+
 }
 
+body{
+
+font-family:'Baloo 2',cursive;
+
+background:linear-gradient(180deg,var(--dark),var(--dark2));
+
+color:white;
+
+scroll-behavior:smooth;
+
+overflow-x:hidden;
+
+}
+
+/* NAVBAR */
+
 .navbar{
-background:#0f1a36;
+
+background:rgba(15,26,54,.9);
+
+backdrop-filter:blur(10px);
+
+transition:.3s;
+
 }
 
 .navbar-brand{
-font-size:1.6rem;
-color:#ffd166!important;
+
+color:var(--primary)!important;
+
 font-weight:700;
+
+font-size:1.6rem;
+
 }
 
 .nav-link{
+
 color:white!important;
+
+margin-left:15px;
+
+transition:.3s;
+
 }
+
+.nav-link:hover{
+
+color:var(--primary)!important;
+
+transform:translateY(-2px);
+
+}
+
+/* HERO */
 
 .hero{
 
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+text-align:center;
+
 background:
+
 linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+
 url("https://images.unsplash.com/photo-1533016163788-9fdbbced25f6?auto=format&fit=crop&w=1500&q=80");
 
 background-size:cover;
+
 background-position:center;
-
-padding:200px 20px;
-
-text-align:center;
 
 }
 
 .hero h1{
 
-font-size:3.5rem;
-color:#ffd166;
+font-size:4rem;
+
+color:var(--primary);
+
+animation:fadeDown 1s;
+
+}
+
+.hero p{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:1.2rem;
+
+opacity:.9;
+
+animation:fadeUp 1.2s;
 
 }
 
 .btn-main{
 
-background:#ffd166;
+margin-top:25px;
+
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+
 color:#0f1a36;
+
+font-weight:700;
+
 border:none;
-padding:12px 30px;
-border-radius:30px;
-font-weight:bold;
+
+border-radius:40px;
+
+padding:14px 35px;
+
+transition:.3s;
+
+box-shadow:0 8px 25px rgba(255,209,102,.4);
 
 }
 
+.btn-main:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 10px 30px rgba(255,209,102,.6);
+
+}
+
+/* SECTIONS */
+
 section{
 
-padding:80px 20px;
+padding:100px 20px;
 
 }
 
 .section-title{
 
 text-align:center;
-margin-bottom:40px;
-color:#ffd166;
+
+color:var(--primary);
+
+margin-bottom:60px;
+
+font-weight:700;
 
 }
+
+/* CARDS */
 
 .card{
 
-background:#22355d;
+background:var(--dark3);
+
 border:none;
-border-radius:15px;
-padding:25px;
 
-}
+border-radius:20px;
 
-footer{
-
-background:#0f1a36;
-text-align:center;
 padding:30px;
-margin-top:50px;
+
+transition:.4s;
+
+box-shadow:0 8px 25px rgba(0,0,0,.3);
+
+height:100%;
 
 }
+
+.card:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 15px 35px rgba(0,0,0,.5);
+
+}
+
+/* INFO BOX */
 
 .info-box{
 
-background:#22355d;
-padding:25px;
-border-radius:15px;
-margin-bottom:20px;
+background:var(--dark3);
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 
 }
 
+/* PRICE */
+
 .price-box{
 
-background:#22355d;
-padding:30px;
-border-radius:15px;
+background:var(--dark3);
+
+padding:40px;
+
+border-radius:20px;
+
 text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+transition:.3s;
+
+}
+
+.price-box:hover{
+
+transform:scale(1.03);
+
+}
+
+/* FOOTER */
+
+footer{
+
+background:var(--dark);
+
+padding:40px;
+
+text-align:center;
+
+color:#aaa;
+
+}
+
+/* ANIMATIONS */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+@keyframes fadeDown{
+
+from{opacity:0;transform:translateY(-30px)}
+
+to{opacity:1;transform:translateY(0)}
+
+}
+
+@keyframes fadeUp{
+
+from{opacity:0;transform:translateY(30px)}
+
+to{opacity:1;transform:translateY(0)}
+
+}
+
+/* floating decorative circles */
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+animation:float 8s infinite ease-in-out;
+
+}
+
+.circle1{
+
+width:120px;
+
+height:120px;
+
+top:20%;
+
+left:5%;
+
+}
+
+.circle2{
+
+width:80px;
+
+height:80px;
+
+bottom:20%;
+
+right:8%;
+
+animation-delay:2s;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0)}
+
+50%{transform:translateY(-20px)}
+
+100%{transform:translateY(0)}
 
 }
 
@@ -122,10 +349,10 @@ text-align:center;
 
 </head>
 
-
 <body>
 
-
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
 
 <!-- NAVBAR -->
 
@@ -144,12 +371,10 @@ text-align:center;
 <ul class="navbar-nav ms-auto">
 
 <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-<li class="nav-item"><a class="nav-link" href="#proyecto">Proyecto</a></li>
 <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
 <li class="nav-item"><a class="nav-link" href="#instalaciones">Instalaciones</a></li>
 <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
 <li class="nav-item"><a class="nav-link" href="#precios">Precios</a></li>
-<li class="nav-item"><a class="nav-link" href="#condiciones">Condiciones</a></li>
 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
 
 </ul>
@@ -159,8 +384,6 @@ text-align:center;
 </div>
 
 </nav>
-
-
 
 <!-- HERO -->
 
@@ -172,46 +395,17 @@ text-align:center;
 
 <p>
 
-Un espacio donde cuidamos a niños y niñas durante la noche mientras
-sus padres trabajan. Ofrecemos cena, baño, juegos, actividades educativas
-y descanso en un ambiente seguro y acogedor.
+Un espacio donde cuidamos a niños y niñas durante la noche
+mientras sus padres trabajan. Cena, baño, juegos y descanso
+en un ambiente seguro y acogedor.
 
 </p>
 
-<a href="#contacto" class="btn btn-main mt-3">Más información</a>
+<a href="#contacto" class="btn btn-main">Más información</a>
 
 </div>
 
 </section>
-
-
-
-<!-- PROYECTO -->
-
-<section id="proyecto">
-
-<div class="container">
-
-<h2 class="section-title">Nuestro Proyecto</h2>
-
-<p class="text-center">
-
-El proyecto <b>Pequeños Soñadores</b> nace para ayudar a las familias
-que necesitan dejar a sus hijos por la noche mientras trabajan.
-
-Ofrecemos un entorno seguro y acogedor donde los niños pueden cenar,
-jugar, aprender, bañarse y descansar hasta la mañana.
-
-Nuestro objetivo es que se sientan como en casa, en un lugar bonito,
-tranquilo y con profesionales preparados para cuidar de ellos.
-
-</p>
-
-</div>
-
-</section>
-
-
 
 <!-- SERVICIOS -->
 
@@ -219,49 +413,49 @@ tranquilo y con profesionales preparados para cuidar de ellos.
 
 <div class="container">
 
-<h2 class="section-title">Servicios</h2>
+<h2 class="section-title reveal">Servicios</h2>
 
 <div class="row g-4">
 
-<div class="col-md-4">
+<div class="col-md-4 reveal">
 <div class="card">
 <h4>🌙 Cuidado nocturno</h4>
-<p>Horario ampliado de 19:00 a 8:00 para ayudar a familias con trabajos nocturnos.</p>
+<p>Horario de 19:00 a 8:00 pensado para familias con trabajos nocturnos.</p>
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 reveal">
 <div class="card">
 <h4>🍽 Cena y desayuno</h4>
-<p>Incluimos cena equilibrada por la noche y desayuno por la mañana.</p>
+<p>Menús saludables adaptados a los niños.</p>
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 reveal">
 <div class="card">
 <h4>🛁 Baño y descanso</h4>
-<p>Los niños se preparan para dormir en un ambiente cómodo y tranquilo.</p>
+<p>Rutina nocturna tranquila para preparar el sueño.</p>
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 reveal">
 <div class="card">
 <h4>🎲 Juegos educativos</h4>
-<p>Actividades educativas y juegos adaptados a la edad.</p>
+<p>Actividades adaptadas a cada edad.</p>
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 reveal">
 <div class="card">
-<h4>🚍 Transporte al colegio</h4>
-<p>Posibilidad de transporte por la mañana al centro escolar.</p>
+<h4>🚍 Transporte escolar</h4>
+<p>Posibilidad de llevar a los niños al colegio por la mañana.</p>
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 reveal">
 <div class="card">
-<h4>🎉 Fines de semana temáticos</h4>
-<p>Actividades especiales con juegos, talleres y dinámicas educativas.</p>
+<h4>🎉 Actividades especiales</h4>
+<p>Talleres y fines de semana temáticos.</p>
 </div>
 </div>
 
@@ -270,8 +464,6 @@ tranquilo y con profesionales preparados para cuidar de ellos.
 </div>
 
 </section>
-
-
 
 <!-- INSTALACIONES -->
 
@@ -279,30 +471,18 @@ tranquilo y con profesionales preparados para cuidar de ellos.
 
 <div class="container">
 
-<h2 class="section-title">Nuestras Instalaciones</h2>
+<h2 class="section-title reveal">Instalaciones</h2>
 
-<div class="info-box">
-
-<p>
-
-Contamos con instalaciones pensadas para el bienestar y desarrollo
-de los niños:
-
-</p>
+<div class="info-box reveal">
 
 <ul>
 
-<li>Amplia sala de juegos y manualidades</li>
-
-<li>Dos habitaciones separadas por edades</li>
-
-<li>Baños con duchas y bañeras</li>
-
-<li>Cocina propia para preparar menús</li>
-
-<li>Habitación para educadoras</li>
-
-<li>Espacio exterior para actividades</li>
+<li>Sala de juegos</li>
+<li>Habitaciones separadas por edades</li>
+<li>Baños con duchas</li>
+<li>Cocina</li>
+<li>Habitación de educadoras</li>
+<li>Espacio exterior</li>
 
 </ul>
 
@@ -311,8 +491,6 @@ de los niños:
 </div>
 
 </section>
-
-
 
 <!-- EQUIPO -->
 
@@ -320,35 +498,21 @@ de los niños:
 
 <div class="container">
 
-<h2 class="section-title">Equipo Promotor</h2>
+<h2 class="section-title reveal">Equipo</h2>
+
+<div class="info-box reveal">
 
 <p class="text-center">
 
-El proyecto está formado por:
-
-<b>Zoe, Alba, Cristina, Gaia y Elisa</b>
+Zoe • Alba • Cristina • Gaia • Elisa
 
 </p>
-
-<div class="info-box">
-
-<ul>
-
-<li>Dirección y administración</li>
-<li>Cocina y limpieza</li>
-<li>Logística y transporte</li>
-<li>Comunicación y marketing</li>
-<li>Atención y animación infantil</li>
-
-</ul>
 
 </div>
 
 </div>
 
 </section>
-
-
 
 <!-- PRECIOS -->
 
@@ -356,48 +520,25 @@ El proyecto está formado por:
 
 <div class="container">
 
-<h2 class="section-title">Precios</h2>
+<h2 class="section-title reveal">Precios</h2>
 
 <div class="row justify-content-center">
 
-<div class="col-md-6">
+<div class="col-md-6 reveal">
 
 <div class="price-box">
 
-<h4>Tarifas orientativas</h4>
-
-<p>Noche completa (19:00 - 8:00)</p>
-
 <h3>20€</h3>
 
-<p>Bono semanal</p>
-
-<h4>70€</h4>
-
-<p>Fines de semana temáticos</p>
-
-<h4>35€ por noche</h4>
+<p>Noche completa</p>
 
 <hr>
 
-<p>Incluye:</p>
+<p>Bono semanal 70€</p>
 
-<p>
+<p>Fin de semana temático 35€</p>
 
-Cena<br>
-Baño<br>
-Cama<br>
-Desayuno<br>
-Actividades<br>
-Transporte
-
-</p>
-
-<p>
-
-Descuento del 10% para hermanos
-
-</p>
+<p>10% descuento hermanos</p>
 
 </div>
 
@@ -408,40 +549,6 @@ Descuento del 10% para hermanos
 </div>
 
 </section>
-
-
-
-<!-- CONDICIONES -->
-
-<section id="condiciones">
-
-<div class="container">
-
-<h2 class="section-title">Condiciones</h2>
-
-<div class="info-box">
-
-<ul>
-
-<li>No venir a recoger al niño bajo efectos de alcohol o drogas.</li>
-
-<li>Vacunas al día.</li>
-
-<li>Traer cambio de ropa.</li>
-
-<li>No se admiten niños con enfermedades contagiosas.</li>
-
-<li>Respetar horarios.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
 
 <!-- CONTACTO -->
 
@@ -449,12 +556,12 @@ Descuento del 10% para hermanos
 
 <div class="container">
 
-<h2 class="section-title">Contacto</h2>
+<h2 class="section-title reveal">Contacto</h2>
 
-<p class="text-center">
+<p class="text-center reveal">
 
-📍 Puerto del Rosario  
-📞 600 123 456  
+📍 Puerto del Rosario<br>
+📞 600 123 456<br>
 ✉ contacto@pequenossonadores.es
 
 </p>
@@ -463,18 +570,45 @@ Descuento del 10% para hermanos
 
 </section>
 
-
-
 <footer>
 
 <p>© 2025 Pequeños Soñadores</p>
 
 </footer>
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<script>
 
+/* reveal animation */
+
+function reveal(){
+
+const reveals=document.querySelectorAll(".reveal")
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=window.innerHeight
+
+let elementTop=reveals[i].getBoundingClientRect().top
+
+let visible=100
+
+if(elementTop<windowHeight-visible){
+
+reveals[i].classList.add("active")
+
+}
+
+}
+
+}
+
+window.addEventListener("scroll",reveal)
+
+reveal()
+
+</script>
+
+</body>
 </html>
