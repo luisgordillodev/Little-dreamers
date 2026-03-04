@@ -16,9 +16,7 @@
 
 <style>
 
-/* ===================== */
 /* VARIABLES */
-/* ===================== */
 
 :root{
 
@@ -31,9 +29,7 @@
 
 }
 
-/* ===================== */
 /* GLOBAL */
-/* ===================== */
 
 body{
 
@@ -49,9 +45,7 @@ scroll-behavior:smooth;
 
 }
 
-/* ===================== */
-/* STARS BACKGROUND */
-/* ===================== */
+/* STARS */
 
 .stars{
 
@@ -81,9 +75,7 @@ animation:twinkle 3s infinite;
 
 }
 
-/* ===================== */
 /* NAVBAR */
-/* ===================== */
 
 .navbar{
 
@@ -99,22 +91,7 @@ font-weight:700;
 
 }
 
-.nav-link{
-
-color:white!important;
-transition:.3s;
-
-}
-
-.nav-link:hover{
-
-color:var(--primary)!important;
-
-}
-
-/* ===================== */
 /* HERO */
-/* ===================== */
 
 .hero{
 
@@ -150,9 +127,7 @@ font-size:1.3rem;
 
 }
 
-/* ===================== */
 /* BUTTON */
-/* ===================== */
 
 .btn-main{
 
@@ -182,18 +157,13 @@ box-shadow:0 15px 40px rgba(255,209,102,.6);
 
 }
 
-/* ===================== */
 /* TITLES */
-/* ===================== */
 
 .section-title{
 
 font-size:2.5rem;
-
 text-align:center;
-
 color:var(--primary);
-
 margin-bottom:60px;
 
 }
@@ -212,9 +182,7 @@ margin:15px auto;
 
 }
 
-/* ===================== */
-/* CARDS */
-/* ===================== */
+/* CARD */
 
 .card{
 
@@ -242,9 +210,7 @@ box-shadow:0 20px 50px rgba(0,0,0,.7);
 
 }
 
-/* ===================== */
 /* BOX */
-/* ===================== */
 
 .info-box{
 
@@ -258,9 +224,141 @@ box-shadow:0 10px 30px rgba(0,0,0,.6);
 
 }
 
-/* ===================== */
-/* FORM */
-/* ===================== */
+/* PRICE */
+
+.price-card{
+
+background:rgba(255,255,255,.06);
+
+border-radius:25px;
+
+padding:40px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+transition:.4s;
+
+position:relative;
+
+}
+
+.price-card:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 25px 60px rgba(0,0,0,.8);
+
+}
+
+.price-header h4{
+
+color:#ffd166;
+
+}
+
+.price-value{
+
+font-size:3rem;
+
+font-weight:700;
+
+margin:20px 0;
+
+color:#ffd166;
+
+}
+
+.price-value span{
+
+display:block;
+
+font-size:1rem;
+
+opacity:.7;
+
+}
+
+.price-features{
+
+list-style:none;
+
+padding:0;
+
+}
+
+.price-features li{
+
+margin:10px 0;
+
+}
+
+/* POPULAR */
+
+.popular{
+
+border:2px solid #ffd166;
+
+transform:scale(1.05);
+
+}
+
+.popular-badge{
+
+position:absolute;
+
+top:-15px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:#ffd166;
+
+color:#0f1a36;
+
+padding:6px 15px;
+
+border-radius:20px;
+
+font-size:.9rem;
+
+font-weight:700;
+
+}
+
+/* CONDITIONS */
+
+.condition-card{
+
+background:rgba(255,255,255,.05);
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+
+transition:.3s;
+
+}
+
+.condition-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.condition-card h4{
+
+color:#ffd166;
+
+margin-bottom:15px;
+
+}
+
+/* CONTACT */
 
 .contact-box{
 
@@ -298,9 +396,7 @@ box-shadow:0 0 0 2px var(--primary);
 
 }
 
-/* ===================== */
-/* SUCCESS MESSAGE */
-/* ===================== */
+/* SUCCESS */
 
 .success{
 
@@ -318,9 +414,7 @@ margin-top:20px;
 
 }
 
-/* ===================== */
-/* SCROLL ANIMATION */
-/* ===================== */
+/* SCROLL */
 
 .reveal{
 
@@ -336,10 +430,6 @@ opacity:1;
 transform:translateY(0);
 
 }
-
-/* ===================== */
-/* FOOTER */
-/* ===================== */
 
 footer{
 
@@ -358,8 +448,6 @@ background:#0b132b;
 
 <div class="stars" id="stars"></div>
 
-<!-- NAVBAR -->
-
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
 <div class="container">
@@ -370,8 +458,6 @@ background:#0b132b;
 
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div class="container">
@@ -381,8 +467,8 @@ background:#0b132b;
 <p>
 
 Un espacio donde cuidamos a niños y niñas durante la noche mientras
-sus padres trabajan. Ofrecemos cena, baño, juegos, actividades y
-descanso en un ambiente seguro y acogedor.
+sus padres trabajan. Ofrecemos cena, baño, juegos, actividades
+educativas y descanso en un ambiente seguro y acogedor.
 
 </p>
 
@@ -391,8 +477,6 @@ descanso en un ambiente seguro y acogedor.
 </div>
 
 </section>
-
-<!-- PROYECTO -->
 
 <section class="container mt-5">
 
@@ -405,17 +489,14 @@ descanso en un ambiente seguro y acogedor.
 Pequeños Soñadores nace para ayudar a las familias que trabajan
 por la noche y necesitan un lugar seguro donde dejar a sus hijos.
 
-Nuestro objetivo es crear un entorno acogedor donde los niños puedan
-cenar, jugar, aprender, bañarse y descansar hasta la mañana,
-sintiéndose como en casa.
+Los niños cenan, juegan, se bañan y descansan en un ambiente seguro
+y agradable mientras esperan a sus padres.
 
 </p>
 
 </div>
 
 </section>
-
-<!-- SERVICIOS -->
 
 <section class="container mt-5">
 
@@ -433,7 +514,7 @@ sintiéndose como en casa.
 <div class="col-md-4 reveal">
 <div class="card">
 <h4>🍽 Cena y desayuno</h4>
-<p>Menús saludables.</p>
+<p>Menús saludables adaptados.</p>
 </div>
 </div>
 
@@ -469,63 +550,263 @@ sintiéndose como en casa.
 
 </section>
 
-<!-- EQUIPO -->
+<section class="container mt-5" id="precios">
 
-<section class="container mt-5">
+<h2 class="section-title reveal">Planes y precios</h2>
 
-<h2 class="section-title reveal">Equipo</h2>
+<div class="row g-4 justify-content-center">
 
-<div class="info-box reveal">
+<div class="col-md-4 reveal">
 
-<p class="text-center">
+<div class="price-card">
 
-Alba • Zoe • Cristina • Elisa • Gaia
+<div class="price-header">
+<h4>🌙 Noche completa</h4>
+</div>
 
+<div class="price-value">20€<span>por noche</span></div>
+
+<ul class="price-features">
+
+<li>🍽 Cena saludable</li>
+<li>🛁 Baño</li>
+<li>🎲 Juegos</li>
+<li>🛏 Descanso</li>
+<li>🥣 Desayuno</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-4 reveal">
+
+<div class="price-card popular">
+
+<div class="popular-badge">Más elegido</div>
+
+<div class="price-header">
+<h4>⭐ Bono semanal</h4>
+</div>
+
+<div class="price-value">70€<span>por semana</span></div>
+
+<ul class="price-features">
+
+<li>🌙 Varias noches</li>
+<li>🍽 Cena y desayuno</li>
+<li>🎲 Actividades</li>
+<li>🛏 Rutina sueño</li>
+<li>🚍 Transporte posible</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-4 reveal">
+
+<div class="price-card">
+
+<div class="price-header">
+<h4>🎉 Fin de semana</h4>
+</div>
+
+<div class="price-value">35€<span>por noche</span></div>
+
+<ul class="price-features">
+
+<li>🎨 Talleres</li>
+<li>🎲 Juegos</li>
+<li>📖 Cuentos</li>
+<li>🍽 Cena</li>
+<li>🎁 Actividades</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container mt-5" id="equipo">
+
+<h2 class="section-title reveal">Nuestro equipo</h2>
+
+<p class="text-center mb-5 reveal" style="max-width:700px;margin:auto;">
+El proyecto Pequeños Soñadores está formado por un equipo comprometido
+con el cuidado, la educación y el bienestar de los niños.
 </p>
 
-</div>
+<div class="row g-4 justify-content-center">
 
-</section>
+<!-- ALBA -->
 
-<!-- PRECIOS -->
+<div class="col-md-4 reveal">
 
-<section class="container mt-5">
+<div class="team-card">
 
-<h2 class="section-title reveal">Precios</h2>
+<img src="https://randomuser.me/api/portraits/women/68.jpg">
 
-<div class="info-box reveal text-center">
+<h4>Alba</h4>
 
-<h3 style="color:#ffd166">20€</h3>
-
-<p>Noche completa</p>
-
-<p>Bono semanal 70€</p>
-
-<p>Fin de semana temático 35€</p>
-
-<p>10% descuento hermanos</p>
+<p class="team-role">Cocina y bienestar</p>
 
 </div>
 
-</section>
+</div>
 
-<!-- CONDICIONES -->
+<!-- ZOE -->
+
+<div class="col-md-4 reveal">
+
+<div class="team-card">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<h4>Zoe</h4>
+
+<p class="team-role">Dirección y coordinación</p>
+
+</div>
+
+</div>
+
+<!-- CRISTINA -->
+
+<div class="col-md-4 reveal">
+
+<div class="team-card">
+
+<img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+<h4>Cristina</h4>
+
+<p class="team-role">Logística y transporte</p>
+
+</div>
+
+</div>
+
+
+<!-- ELISA -->
+
+<div class="col-md-4 reveal">
+
+<div class="team-card">
+
+<img src="https://randomuser.me/api/portraits/women/33.jpg">
+
+<h4>Elisa</h4>
+
+<p class="team-role">Educación y animación infantil</p>
+
+</div>
+
+</div>
+
+<!-- GAIA -->
+
+<div class="col-md-4 reveal">
+
+<div class="team-card">
+
+<img src="https://randomuser.me/api/portraits/women/50.jpg">
+
+<h4>Gaia</h4>
+
+<p class="team-role">Comunicación y marketing</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <section class="container mt-5">
 
 <h2 class="section-title reveal">Condiciones</h2>
 
-<div class="info-box reveal">
+<div class="row g-4">
+
+<div class="col-md-6 reveal">
+
+<div class="condition-card">
+
+<h4>🛡 Seguridad</h4>
 
 <ul>
 
-<li>No recoger al niño bajo efectos de alcohol o drogas.</li>
+<li>Solo padres o tutores pueden recoger.</li>
+
+<li>No recogida bajo efectos de alcohol.</li>
+
+<li>Personal con primeros auxilios.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-6 reveal">
+
+<div class="condition-card">
+
+<h4>🏥 Salud</h4>
+
+<ul>
 
 <li>Vacunas al día.</li>
 
+<li>No enfermedades contagiosas.</li>
+
+<li>Informar alergias.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-6 reveal">
+
+<div class="condition-card">
+
+<h4>🎒 Preparación</h4>
+
+<ul>
+
 <li>Traer ropa de cambio.</li>
 
-<li>No enfermedades contagiosas.</li>
+<li>Pañales si es necesario.</li>
+
+<li>Peluche o manta si desean.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-6 reveal">
+
+<div class="condition-card">
+
+<h4>⏰ Horarios</h4>
+
+<ul>
+
+<li>Entrada desde 19:00.</li>
+
+<li>Salida antes de 8:00.</li>
 
 <li>Respetar horarios.</li>
 
@@ -533,9 +814,11 @@ Alba • Zoe • Cristina • Elisa • Gaia
 
 </div>
 
-</section>
+</div>
 
-<!-- CONTACTO -->
+</div>
+
+</section>
 
 <section id="contacto" class="container mt-5">
 
@@ -603,7 +886,7 @@ stars.appendChild(s)
 
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 
 function reveal(){
 
