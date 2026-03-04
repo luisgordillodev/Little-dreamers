@@ -16,6 +16,10 @@
 
 <style>
 
+/* ===================== */
+/* VARIABLES */
+/* ===================== */
+
 :root{
 
 --primary:#ffd166;
@@ -27,58 +31,77 @@
 
 }
 
-/* GENERAL */
+/* ===================== */
+/* GLOBAL */
+/* ===================== */
 
 body{
 
 font-family:'Baloo 2',cursive;
 
-background:linear-gradient(180deg,var(--dark),var(--dark2));
+background:linear-gradient(180deg,#0b132b,#1c2541);
 
 color:white;
-
-scroll-behavior:smooth;
 
 overflow-x:hidden;
 
-}
-
-p, li{
-
-color:white;
-
-opacity:.95;
+scroll-behavior:smooth;
 
 }
 
+/* ===================== */
+/* STARS BACKGROUND */
+/* ===================== */
+
+.stars{
+
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+
+}
+
+.star{
+
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+opacity:.8;
+animation:twinkle 3s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{opacity:.2}
+50%{opacity:1}
+100%{opacity:.2}
+
+}
+
+/* ===================== */
 /* NAVBAR */
+/* ===================== */
 
 .navbar{
 
-background:rgba(15,26,54,.95);
-
+background:rgba(10,15,40,.85);
 backdrop-filter:blur(10px);
-
-padding:15px;
 
 }
 
 .navbar-brand{
 
 color:var(--primary)!important;
-
 font-weight:700;
-
-font-size:1.6rem;
 
 }
 
 .nav-link{
 
 color:white!important;
-
-margin-left:15px;
-
 transition:.3s;
 
 }
@@ -87,30 +110,25 @@ transition:.3s;
 
 color:var(--primary)!important;
 
-transform:translateY(-2px);
-
 }
 
+/* ===================== */
 /* HERO */
+/* ===================== */
 
 .hero{
 
 min-height:100vh;
 
 display:flex;
-
 align-items:center;
-
 text-align:center;
 
 background:
-
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
 url("https://images.unsplash.com/photo-1533016163788-9fdbbced25f6?auto=format&fit=crop&w=1500&q=80");
 
 background-size:cover;
-
 background-position:center;
 
 }
@@ -118,46 +136,41 @@ background-position:center;
 .hero h1{
 
 font-size:4rem;
-
 color:var(--primary);
 
-text-shadow:0 0 15px rgba(255,209,102,.6);
-
-margin-bottom:20px;
+text-shadow:0 0 20px rgba(255,209,102,.7);
 
 }
 
 .hero p{
 
 max-width:700px;
-
 margin:auto;
-
 font-size:1.3rem;
 
 }
 
-/* BOTON */
+/* ===================== */
+/* BUTTON */
+/* ===================== */
 
 .btn-main{
 
-margin-top:30px;
-
 background:linear-gradient(90deg,var(--primary),var(--secondary));
-
-color:#0f1a36;
-
-font-weight:700;
 
 border:none;
 
-border-radius:40px;
-
 padding:14px 35px;
 
-transition:.3s;
+border-radius:40px;
 
-box-shadow:0 8px 25px rgba(255,209,102,.4);
+font-weight:700;
+
+color:#0f1a36;
+
+box-shadow:0 10px 30px rgba(255,209,102,.4);
+
+transition:.3s;
 
 }
 
@@ -165,37 +178,23 @@ box-shadow:0 8px 25px rgba(255,209,102,.4);
 
 transform:translateY(-4px);
 
-box-shadow:0 10px 35px rgba(255,209,102,.6);
+box-shadow:0 15px 40px rgba(255,209,102,.6);
 
 }
 
-/* SECCIONES */
-
-section{
-
-padding:110px 20px;
-
-position:relative;
-
-}
-
-/* TITULOS */
+/* ===================== */
+/* TITLES */
+/* ===================== */
 
 .section-title{
 
-text-align:center;
+font-size:2.5rem;
 
-font-weight:700;
+text-align:center;
 
 color:var(--primary);
 
-font-size:2.4rem;
-
 margin-bottom:60px;
-
-position:relative;
-
-text-shadow:0 0 10px rgba(255,209,102,.4);
 
 }
 
@@ -204,24 +203,22 @@ text-shadow:0 0 10px rgba(255,209,102,.4);
 content:"";
 
 width:90px;
-
 height:4px;
 
 background:linear-gradient(90deg,var(--primary),var(--secondary));
 
 display:block;
-
-margin:15px auto 0 auto;
-
-border-radius:5px;
+margin:15px auto;
 
 }
 
-/* TARJETAS */
+/* ===================== */
+/* CARDS */
+/* ===================== */
 
 .card{
 
-background:var(--dark3);
+background:rgba(255,255,255,.05);
 
 border:none;
 
@@ -229,157 +226,127 @@ border-radius:20px;
 
 padding:35px;
 
+backdrop-filter:blur(10px);
+
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+
 transition:.4s;
-
-box-shadow:0 10px 30px rgba(0,0,0,.4);
-
-height:100%;
-
-}
-
-.card h4{
-
-color:var(--primary);
-
-margin-bottom:15px;
 
 }
 
 .card:hover{
 
-transform:translateY(-12px) scale(1.03);
+transform:translateY(-10px) scale(1.02);
 
-box-shadow:0 20px 50px rgba(0,0,0,.6);
+box-shadow:0 20px 50px rgba(0,0,0,.7);
 
 }
 
-/* CAJAS INFO */
+/* ===================== */
+/* BOX */
+/* ===================== */
 
 .info-box{
 
-background:var(--dark3);
-
-padding:35px;
-
-border-radius:20px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.5);
-
-}
-
-/* PRECIOS */
-
-.price-box{
-
-background:var(--dark3);
-
-padding:45px;
-
-border-radius:20px;
-
-text-align:center;
-
-box-shadow:0 15px 40px rgba(0,0,0,.4);
-
-transition:.4s;
-
-}
-
-.price-box h3{
-
-font-size:3rem;
-
-color:var(--primary);
-
-}
-
-.price-box:hover{
-
-transform:scale(1.05);
-
-}
-
-/* FOOTER */
-
-footer{
-
-background:var(--dark);
+background:rgba(255,255,255,.05);
 
 padding:40px;
 
-text-align:center;
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+
+}
+
+/* ===================== */
+/* FORM */
+/* ===================== */
+
+.contact-box{
+
+background:rgba(255,255,255,.05);
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 10px 40px rgba(0,0,0,.6);
+
+}
+
+.form-control{
+
+background:rgba(255,255,255,.1);
+
+border:none;
 
 color:white;
 
 }
 
-/* ANIMACION SCROLL */
+.form-control::placeholder{
+
+color:#ddd;
+
+}
+
+.form-control:focus{
+
+background:rgba(255,255,255,.2);
+
+box-shadow:0 0 0 2px var(--primary);
+
+}
+
+/* ===================== */
+/* SUCCESS MESSAGE */
+/* ===================== */
+
+.success{
+
+display:none;
+
+text-align:center;
+
+padding:30px;
+
+background:rgba(0,255,150,.1);
+
+border-radius:20px;
+
+margin-top:20px;
+
+}
+
+/* ===================== */
+/* SCROLL ANIMATION */
+/* ===================== */
 
 .reveal{
 
 opacity:0;
-
 transform:translateY(40px);
-
-transition:all .9s ease;
+transition:.9s;
 
 }
 
 .reveal.active{
 
 opacity:1;
-
 transform:translateY(0);
 
 }
 
-/* DECORACION */
+/* ===================== */
+/* FOOTER */
+/* ===================== */
 
-.circle{
+footer{
 
-position:absolute;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.04);
-
-animation:float 8s infinite ease-in-out;
-
-}
-
-.circle1{
-
-width:120px;
-
-height:120px;
-
-top:20%;
-
-left:5%;
-
-}
-
-.circle2{
-
-width:80px;
-
-height:80px;
-
-bottom:20%;
-
-right:8%;
-
-animation-delay:2s;
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0)}
-
-50%{transform:translateY(-20px)}
-
-100%{transform:translateY(0)}
+margin-top:80px;
+padding:40px;
+text-align:center;
+background:#0b132b;
 
 }
 
@@ -389,8 +356,7 @@ animation-delay:2s;
 
 <body>
 
-<div class="circle circle1"></div>
-<div class="circle circle2"></div>
+<div class="stars" id="stars"></div>
 
 <!-- NAVBAR -->
 
@@ -398,26 +364,7 @@ animation-delay:2s;
 
 <div class="container">
 
-<a class="navbar-brand" href="#">🌙 Pequeños Soñadores</a>
-
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="menu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-<li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-<li class="nav-item"><a class="nav-link" href="#instalaciones">Instalaciones</a></li>
-<li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
-<li class="nav-item"><a class="nav-link" href="#precios">Precios</a></li>
-<li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-
-</ul>
-
-</div>
+<a class="navbar-brand">🌙 Pequeños Soñadores</a>
 
 </div>
 
@@ -425,7 +372,7 @@ animation-delay:2s;
 
 <!-- HERO -->
 
-<section class="hero" id="inicio">
+<section class="hero">
 
 <div class="container">
 
@@ -433,13 +380,36 @@ animation-delay:2s;
 
 <p>
 
-Un espacio donde cuidamos a niños y niñas durante la noche
-mientras sus padres trabajan. Cena, baño, juegos y descanso
-en un ambiente seguro y acogedor.
+Un espacio donde cuidamos a niños y niñas durante la noche mientras
+sus padres trabajan. Ofrecemos cena, baño, juegos, actividades y
+descanso en un ambiente seguro y acogedor.
 
 </p>
 
-<a href="#contacto" class="btn btn-main">Más información</a>
+<a href="#contacto" class="btn btn-main mt-4">Solicitar información</a>
+
+</div>
+
+</section>
+
+<!-- PROYECTO -->
+
+<section class="container mt-5">
+
+<h2 class="section-title reveal">Nuestro proyecto</h2>
+
+<div class="info-box reveal">
+
+<p>
+
+Pequeños Soñadores nace para ayudar a las familias que trabajan
+por la noche y necesitan un lugar seguro donde dejar a sus hijos.
+
+Nuestro objetivo es crear un entorno acogedor donde los niños puedan
+cenar, jugar, aprender, bañarse y descansar hasta la mañana,
+sintiéndose como en casa.
+
+</p>
 
 </div>
 
@@ -447,9 +417,7 @@ en un ambiente seguro y acogedor.
 
 <!-- SERVICIOS -->
 
-<section id="servicios">
-
-<div class="container">
+<section class="container mt-5">
 
 <h2 class="section-title reveal">Servicios</h2>
 
@@ -458,21 +426,21 @@ en un ambiente seguro y acogedor.
 <div class="col-md-4 reveal">
 <div class="card">
 <h4>🌙 Cuidado nocturno</h4>
-<p>Horario de 19:00 a 8:00 pensado para familias con trabajos nocturnos.</p>
+<p>Horario de 19:00 a 8:00.</p>
 </div>
 </div>
 
 <div class="col-md-4 reveal">
 <div class="card">
 <h4>🍽 Cena y desayuno</h4>
-<p>Menús saludables adaptados a los niños.</p>
+<p>Menús saludables.</p>
 </div>
 </div>
 
 <div class="col-md-4 reveal">
 <div class="card">
 <h4>🛁 Baño y descanso</h4>
-<p>Rutina nocturna tranquila para preparar el sueño.</p>
+<p>Rutina tranquila para dormir.</p>
 </div>
 </div>
 
@@ -486,7 +454,7 @@ en un ambiente seguro y acogedor.
 <div class="col-md-4 reveal">
 <div class="card">
 <h4>🚍 Transporte escolar</h4>
-<p>Posibilidad de llevar a los niños al colegio por la mañana.</p>
+<p>Llevamos a los niños al colegio.</p>
 </div>
 </div>
 
@@ -499,42 +467,11 @@ en un ambiente seguro y acogedor.
 
 </div>
 
-</div>
-
-</section>
-
-<!-- INSTALACIONES -->
-
-<section id="instalaciones">
-
-<div class="container">
-
-<h2 class="section-title reveal">Instalaciones</h2>
-
-<div class="info-box reveal">
-
-<ul>
-
-<li>Sala de juegos</li>
-<li>Habitaciones separadas por edades</li>
-<li>Baños con duchas</li>
-<li>Cocina</li>
-<li>Habitación de educadoras</li>
-<li>Espacio exterior</li>
-
-</ul>
-
-</div>
-
-</div>
-
 </section>
 
 <!-- EQUIPO -->
 
-<section id="equipo">
-
-<div class="container">
+<section class="container mt-5">
 
 <h2 class="section-title reveal">Equipo</h2>
 
@@ -548,29 +485,19 @@ Alba • Zoe • Cristina • Elisa • Gaia
 
 </div>
 
-</div>
-
 </section>
 
 <!-- PRECIOS -->
 
-<section id="precios">
-
-<div class="container">
+<section class="container mt-5">
 
 <h2 class="section-title reveal">Precios</h2>
 
-<div class="row justify-content-center">
+<div class="info-box reveal text-center">
 
-<div class="col-md-6 reveal">
-
-<div class="price-box">
-
-<h3>20€</h3>
+<h3 style="color:#ffd166">20€</h3>
 
 <p>Noche completa</p>
-
-<hr>
 
 <p>Bono semanal 70€</p>
 
@@ -580,9 +507,29 @@ Alba • Zoe • Cristina • Elisa • Gaia
 
 </div>
 
-</div>
+</section>
 
-</div>
+<!-- CONDICIONES -->
+
+<section class="container mt-5">
+
+<h2 class="section-title reveal">Condiciones</h2>
+
+<div class="info-box reveal">
+
+<ul>
+
+<li>No recoger al niño bajo efectos de alcohol o drogas.</li>
+
+<li>Vacunas al día.</li>
+
+<li>Traer ropa de cambio.</li>
+
+<li>No enfermedades contagiosas.</li>
+
+<li>Respetar horarios.</li>
+
+</ul>
 
 </div>
 
@@ -590,19 +537,41 @@ Alba • Zoe • Cristina • Elisa • Gaia
 
 <!-- CONTACTO -->
 
-<section id="contacto">
-
-<div class="container">
+<section id="contacto" class="container mt-5">
 
 <h2 class="section-title reveal">Contacto</h2>
 
-<p class="text-center reveal">
+<div class="row justify-content-center">
 
-📍 Puerto del Rosario<br>
-📞 600 123 456<br>
-✉ contacto@pequenossonadores.es
+<div class="col-md-7 reveal">
 
-</p>
+<div class="contact-box">
+
+<form id="contactForm">
+
+<input class="form-control mb-3" placeholder="Nombre completo" required>
+
+<input class="form-control mb-3" placeholder="Correo electrónico" required>
+
+<input class="form-control mb-3" placeholder="Teléfono">
+
+<textarea class="form-control mb-3" rows="4" placeholder="Mensaje"></textarea>
+
+<button class="btn btn-main w-100">Enviar mensaje</button>
+
+</form>
+
+<div class="success" id="success">
+
+<h4>Mensaje enviado</h4>
+
+<p>Gracias por contactar con nosotros.</p>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -614,33 +583,61 @@ Alba • Zoe • Cristina • Elisa • Gaia
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
+
+/* STARS */
+
+const stars=document.getElementById("stars")
+
+for(let i=0;i<180;i++){
+
+let s=document.createElement("div")
+
+s.className="star"
+
+s.style.top=Math.random()*100+"%"
+
+s.style.left=Math.random()*100+"%"
+
+stars.appendChild(s)
+
+}
+
+/* SCROLL ANIMATION */
 
 function reveal(){
 
-const reveals=document.querySelectorAll(".reveal")
+document.querySelectorAll(".reveal").forEach(el=>{
 
-for(let i=0;i<reveals.length;i++){
+if(el.getBoundingClientRect().top<window.innerHeight-100){
 
-let windowHeight=window.innerHeight
-let elementTop=reveals[i].getBoundingClientRect().top
-let visible=100
-
-if(elementTop<windowHeight-visible){
-
-reveals[i].classList.add("active")
+el.classList.add("active")
 
 }
 
-}
+})
 
 }
 
 window.addEventListener("scroll",reveal)
 
 reveal()
+
+/* FORM */
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+setTimeout(()=>{
+
+document.getElementById("success").style.display="block"
+
+this.reset()
+
+},800)
+
+})
 
 </script>
 
