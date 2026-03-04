@@ -27,6 +27,8 @@
 
 }
 
+/* GENERAL */
+
 body{
 
 font-family:'Baloo 2',cursive;
@@ -41,15 +43,23 @@ overflow-x:hidden;
 
 }
 
+p, li{
+
+color:white;
+
+opacity:.95;
+
+}
+
 /* NAVBAR */
 
 .navbar{
 
-background:rgba(15,26,54,.9);
+background:rgba(15,26,54,.95);
 
 backdrop-filter:blur(10px);
 
-transition:.3s;
+padding:15px;
 
 }
 
@@ -111,7 +121,9 @@ font-size:4rem;
 
 color:var(--primary);
 
-animation:fadeDown 1s;
+text-shadow:0 0 15px rgba(255,209,102,.6);
+
+margin-bottom:20px;
 
 }
 
@@ -121,17 +133,15 @@ max-width:700px;
 
 margin:auto;
 
-font-size:1.2rem;
-
-opacity:.9;
-
-animation:fadeUp 1.2s;
+font-size:1.3rem;
 
 }
 
+/* BOTON */
+
 .btn-main{
 
-margin-top:25px;
+margin-top:30px;
 
 background:linear-gradient(90deg,var(--primary),var(--secondary));
 
@@ -155,31 +165,59 @@ box-shadow:0 8px 25px rgba(255,209,102,.4);
 
 transform:translateY(-4px);
 
-box-shadow:0 10px 30px rgba(255,209,102,.6);
+box-shadow:0 10px 35px rgba(255,209,102,.6);
 
 }
 
-/* SECTIONS */
+/* SECCIONES */
 
 section{
 
-padding:100px 20px;
+padding:110px 20px;
+
+position:relative;
 
 }
+
+/* TITULOS */
 
 .section-title{
 
 text-align:center;
 
+font-weight:700;
+
 color:var(--primary);
+
+font-size:2.4rem;
 
 margin-bottom:60px;
 
-font-weight:700;
+position:relative;
+
+text-shadow:0 0 10px rgba(255,209,102,.4);
 
 }
 
-/* CARDS */
+.section-title::after{
+
+content:"";
+
+width:90px;
+
+height:4px;
+
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+display:block;
+
+margin:15px auto 0 auto;
+
+border-radius:5px;
+
+}
+
+/* TARJETAS */
 
 .card{
 
@@ -189,45 +227,53 @@ border:none;
 
 border-radius:20px;
 
-padding:30px;
+padding:35px;
 
 transition:.4s;
 
-box-shadow:0 8px 25px rgba(0,0,0,.3);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 
 height:100%;
 
 }
 
-.card:hover{
+.card h4{
 
-transform:translateY(-10px) scale(1.02);
+color:var(--primary);
 
-box-shadow:0 15px 35px rgba(0,0,0,.5);
+margin-bottom:15px;
 
 }
 
-/* INFO BOX */
+.card:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 20px 50px rgba(0,0,0,.6);
+
+}
+
+/* CAJAS INFO */
 
 .info-box{
 
 background:var(--dark3);
 
-padding:30px;
+padding:35px;
 
 border-radius:20px;
 
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+box-shadow:0 15px 40px rgba(0,0,0,.5);
 
 }
 
-/* PRICE */
+/* PRECIOS */
 
 .price-box{
 
 background:var(--dark3);
 
-padding:40px;
+padding:45px;
 
 border-radius:20px;
 
@@ -235,13 +281,21 @@ text-align:center;
 
 box-shadow:0 15px 40px rgba(0,0,0,.4);
 
-transition:.3s;
+transition:.4s;
+
+}
+
+.price-box h3{
+
+font-size:3rem;
+
+color:var(--primary);
 
 }
 
 .price-box:hover{
 
-transform:scale(1.03);
+transform:scale(1.05);
 
 }
 
@@ -255,11 +309,11 @@ padding:40px;
 
 text-align:center;
 
-color:#aaa;
+color:white;
 
 }
 
-/* ANIMATIONS */
+/* ANIMACION SCROLL */
 
 .reveal{
 
@@ -267,7 +321,7 @@ opacity:0;
 
 transform:translateY(40px);
 
-transition:all .8s ease;
+transition:all .9s ease;
 
 }
 
@@ -279,23 +333,7 @@ transform:translateY(0);
 
 }
 
-@keyframes fadeDown{
-
-from{opacity:0;transform:translateY(-30px)}
-
-to{opacity:1;transform:translateY(0)}
-
-}
-
-@keyframes fadeUp{
-
-from{opacity:0;transform:translateY(30px)}
-
-to{opacity:1;transform:translateY(0)}
-
-}
-
-/* floating decorative circles */
+/* DECORACION */
 
 .circle{
 
@@ -303,7 +341,7 @@ position:absolute;
 
 border-radius:50%;
 
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.04);
 
 animation:float 8s infinite ease-in-out;
 
@@ -504,7 +542,7 @@ en un ambiente seguro y acogedor.
 
 <p class="text-center">
 
-Zoe • Alba • Cristina • Gaia • Elisa
+Alba • Zoe • Cristina • Elisa • Gaia
 
 </p>
 
@@ -580,8 +618,6 @@ Zoe • Alba • Cristina • Gaia • Elisa
 
 <script>
 
-/* reveal animation */
-
 function reveal(){
 
 const reveals=document.querySelectorAll(".reveal")
@@ -589,9 +625,7 @@ const reveals=document.querySelectorAll(".reveal")
 for(let i=0;i<reveals.length;i++){
 
 let windowHeight=window.innerHeight
-
 let elementTop=reveals[i].getBoundingClientRect().top
-
 let visible=100
 
 if(elementTop<windowHeight-visible){
